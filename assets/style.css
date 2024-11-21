@@ -1,0 +1,145 @@
+:root {
+    --background: #3f3f3f;
+    --main: #ff3ce5;
+    --second: #fff;
+    --select: #34e9b2;
+    --radius: 5px;
+}
+
+::selection {
+    background-color: var(--select);
+    color: var(--background);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.5;
+    color: var(--second);
+}
+
+body {
+    background-color: var(--background);
+}
+
+h1,
+h2 {
+    margin: 1rem 0;
+    color: var(--main);
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 4.5rem;
+    padding: 1rem
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+header,
+footer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p{
+    font-size: 3rem;
+    padding-bottom: 3rem;
+}
+
+h1 + p {
+    font-size: 2rem;
+}
+
+h2 + p {
+    color: var(--main);
+}
+main {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    transition: flex-basis 500ms linear;
+    
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 30%;
+    margin: 3rem 2rem;
+    padding: 1rem;
+    outline: 2px dashed var(--second);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+    
+}
+ .header {
+    position: relative;
+    margin:-5.5rem 0 1rem 0;
+    padding: 1rem;
+    border: 2px solid var(--second);
+    background-color: var(--background);
+    border-radius: var(--radius);
+    transition: all 0.5s ease-in-out;
+ }
+
+ .card:hover,
+ .card:hover .header{
+    box-shadow: inset 0px 0px 8px var(--main), 0 0 15px var(--main);
+ }
+
+.card .code {
+    flex-grow: 1;
+    
+}
+
+ .card pre {
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1rem;
+    border-radius: var(--radius);
+    background-image: linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%,
+        rgba(255, 66, 214, 0.6) 100%
+    );
+    display: flex;
+    align-items: center;
+ }
+
+ .card pre:active {
+    user-select: all;
+ }
+
+ @media screen and (max-width: 768px) {
+    .card {
+        flex: 1 0 60%;
+    }
+
+    .card:last-child {
+        flex-grow: 1;
+    }
+ }
+
